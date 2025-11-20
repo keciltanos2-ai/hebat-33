@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>KisahSukses — Full Web</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="branding">
+    <h1>KisahSukses</h1>
+    <p class="muted">YouTube random • Games • AI Chat • Search • Quotes</p>
+  </div>
+  <div class="controls">
+    <button id="themeToggle">Dark / Light</button>
+    <button id="randomBtn">Random Video</button>
+  </div>
+</header>
+
+<main class="layout">
+  <aside class="left">
+    <div class="card search-card">
+      <h3>Search</h3>
+      <div class="search-row">
+        <input id="gq" placeholder="Cari di Google..." />
+        <button id="searchBtn">Cari</button>
+      </div>
+      <div class="note">Hasil pencarian akan dibuka di tab baru (Google memblokir embedding).</div>
+    </div>
+
+    <div class="card quote-card">
+      <h3>Quote</h3>
+      <div id="quoteText">"Mulai dari yang kecil, tapi konsisten."</div>
+      <button id="nextQuote">Next Quote</button>
+    </div>
+  </aside>
+
+  <section class="center">
+    <div class="card chat-card">
+      <h3>Chat AI (Groq via proxy)</h3>
+      <div id="chatLog" class="chat-log"></div>
+      <div class="chat-input">
+        <input id="chatIn" placeholder="Tulis pesan..." />
+        <button id="chatSend">Kirim</button>
+      </div>
+      <div id="aiStatus" class="status">AI: mock (no proxy)</div>
+    </div>
+  </section>
+
+  <aside class="right">
+    <div class="card yt-card">
+      <h3>YouTube Mini</h3>
+      <div id="player"></div>
+      <div id="ytTitle" class="yt-title"></div>
+      <div class="yt-controls">
+        <button id="prevVid">Prev</button>
+        <button id="playPause">Play/Pause</button>
+        <button id="nextVid">Next</button>
+        <button id="randomSmall">Random</button>
+      </div>
+    </div>
+
+    <div class="card game-card">
+      <h3>Games</h3>
+      <div class="game-tabs">
+        <button class="gbtn" data-src="games/dino.html">Dino</button>
+        <button class="gbtn" data-src="games/tetris.html">Tetris</button>
+        <button class="gbtn" data-src="games/flappy.html">Flappy</button>
+      </div>
+      <iframe id="gameFrame" class="game-frame" src="games/dino.html"></iframe>
+    </div>
+  </aside>
+</main>
+
+<footer class="footer">Made with ❤️ — Keep your GROQ key in the server env, not in client.</footer>
+
+<script src="config.js"></script>
+<script src="client.js"></script>
+<script async src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
