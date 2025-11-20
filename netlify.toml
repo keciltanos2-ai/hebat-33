@@ -1,9 +1,8 @@
 [build]
+  publish = "."
   command = ""
-  publish = "public"
 
 [functions]
-  directory = "netlify/functions"
   node_bundler = "esbuild"
 
 [[redirects]]
